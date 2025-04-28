@@ -1,0 +1,19 @@
+{
+    "name": "personlinks/internship",
+    "description": "Internship registration form site",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "PersonLinks\\Internship\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "tperson",
+            "email": "persont118@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.10"
+    }
+}
