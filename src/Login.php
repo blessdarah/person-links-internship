@@ -7,8 +7,7 @@ session_start();
 unset($_SESSION['UserID']);
 session_destroy();
 
-$conn = new Connection();
-$db = $conn->getConnection();
+$db = new Connection()->getInstance();
 
 if (isset($_POST["upload"])) {
 	$Username = $_POST['username'];
