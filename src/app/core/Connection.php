@@ -1,6 +1,6 @@
 <?php
 
-namespace PersonLinks\Internship;
+namespace PersonLinks\Internship\app\core;
 
 use Exception;
 use PDO;

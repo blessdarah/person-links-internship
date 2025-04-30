@@ -1,16 +1,16 @@
 <?php
 
-use PersonLinks\Internship\Connection;
+use PersonLinks\Internship\app\core\Connection;
 
 session_start();
 
-if (!isset($_SESSION['UserID'])) {
-	header('Location: login.php');
+if (! isset($_SESSION['UserID'])) {
+    header('Location: login.php');
 }
 
-if (isset($_POST["logout"])) {
-	session_destroy();
-	header('Location: index.php');
+if (isset($_POST['logout'])) {
+    session_destroy();
+    header('Location: index.php');
 }
 
 $UserID = $_SESSION['UserID'];
@@ -18,7 +18,7 @@ $Name = $_SESSION['Name'];
 $Role = $_SESSION['Role'];
 
 $db = Connection::getInstance();
-$query = $db->query("SELECT * FROM register ORDER BY app_id DESC");
+$query = $db->query('SELECT * FROM register ORDER BY app_id DESC');
 $applicants = $query->fetchAll();
 ?>
 
@@ -64,7 +64,7 @@ $applicants = $query->fetchAll();
 			<h2 class="heading1">List of Applicants</h2>
 		</center>
 
-		<?php if (count($applicants) > 0): ?>
+		<?php if (count($applicants) > 0) { ?>
 
 			<div class="list">
 				<center>
@@ -81,28 +81,28 @@ $applicants = $query->fetchAll();
 							<th>Status</th>
 						</tr>
 
-						<?php foreach ($applicants as $row): ?>
+						<?php foreach ($applicants as $row) { ?>
 
 							<tr>
-								<td><?php echo ($row['app_id']); ?></td>
-								<td><?php echo ($row['applicant_id']); ?></td>
-								<td><?php echo ($row['fullname']); ?></td>
-								<td><?php echo ($row['school']); ?></td>
-								<td><?php echo ($row['speciality']); ?></td>
-								<td><?php echo ($row['email']); ?></td>
-								<td><?php echo ($row['referral']); ?></td>
-								<td><?php echo ($row['phone']); ?></td>
-								<td><?php echo ($row['status']); ?></td>
+								<td><?php echo $row['app_id']; ?></td>
+								<td><?php echo $row['applicant_id']; ?></td>
+								<td><?php echo $row['fullname']; ?></td>
+								<td><?php echo $row['school']; ?></td>
+								<td><?php echo $row['speciality']; ?></td>
+								<td><?php echo $row['email']; ?></td>
+								<td><?php echo $row['referral']; ?></td>
+								<td><?php echo $row['phone']; ?></td>
+								<td><?php echo $row['status']; ?></td>
 							</tr>
 
-						<?php endforeach; ?>
+						<?php } ?>
 						
 					</table>
 				</center>
 
 			</div>
 
-		<?php endif; ?>
+		<?php } ?>
 	</div>
 
 </body>

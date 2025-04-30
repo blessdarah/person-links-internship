@@ -1,5 +1,8 @@
 <?php
 
+define('APP_ROOT', __DIR__);
+define('PUBLIC_PATH', __DIR__.'/public');
+
 require __DIR__.'/vendor/autoload.php';
 
 use Dotenv\Dotenv;
@@ -16,6 +19,3 @@ require __DIR__.'/src/app/router/helper.php';
 
 // setup router
 Router::start();
-
-define('APP_ROOT', __DIR__);
-

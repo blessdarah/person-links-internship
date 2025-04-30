@@ -1,7 +1,10 @@
 <?php
 
-use Pecee\SimpleRouter\SimpleRouter as Router;
+declare(strict_types=1);
 
-Router::get('/', function () {
-    require __DIR__.'/../../views/pages/HomePage.php';
-});
+use Pecee\SimpleRouter\SimpleRouter as Router;
+use PersonLinks\Internship\controllers\PageController;
+
+Router::get('/', [PageController::class, 'index']);
+Router::get('/apply', [PageController::class, 'apply']);
+Router::post('/apply', [PageController::class, 'applyHandler']);
