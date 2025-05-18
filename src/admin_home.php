@@ -1,22 +1,21 @@
 <?php
 
-    session_start();
-	if (empty($_SESSION['UserID']) || !isset($_SESSION['UserID'])) {
-		header('Location: login.php');
-	}
-	
+session_start();
+if (empty($_SESSION['UserID']) || ! isset($_SESSION['UserID'])) {
+    header('Location: login.php');
+}
 
-    $UserID = $_SESSION['UserID'];
-    $Name = $_SESSION['Name'];
-    $Role = $_SESSION['Role'];
+$UserID = $_SESSION['UserID'];
+$Name = $_SESSION['Name'];
+$Role = $_SESSION['Role'];
 
-    //$query = $conn->query("SELECT * FROM users WHERE user_id = '$UserID'");
-    //$row = mysqli_fetch_assoc($query);
+// $query = $conn->query("SELECT * FROM users WHERE user_id = '$UserID'");
+// $row = mysqli_fetch_assoc($query);
 
-	if (isset($_POST["logout"])) {
-		session_destroy();
-		header('Location: index.php');
-	}
+if (isset($_POST['logout'])) {
+    session_destroy();
+    header('Location: index.php');
+}
 ?>
 
 <!Doctype html>
@@ -54,7 +53,7 @@
 
 		<div class="containers">
 			<center>
-				<center><br><h1 class="form__title">Welcome <?php echo($Name); ?> <br><span>What do you want to do?</span></h1></center><br>
+				<center><br><h1 class="form__title">Welcome <?php echo $Name; ?> <br><span>What do you want to do?</span></h1></center><br>
 				<button class="btn"><a href="applicants.php">View Applicants List</a></button><br><br><br>
 				<button class="btn"><a href="payment.php">Validate Transaction</a></button>
 			</center>

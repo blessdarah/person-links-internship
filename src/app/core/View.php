@@ -8,7 +8,8 @@ class View
         protected string $view,
         protected ?array $data = [],
         protected ?string $layout = 'main'
-    ) {}
+    ) {
+    }
 
     public function withLayout(string $layout)
     {

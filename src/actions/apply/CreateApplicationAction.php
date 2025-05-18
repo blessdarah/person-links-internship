@@ -13,8 +13,8 @@ class CreateApplicationAction
         $db = Connection::getInstance();
 
         $sql = 'INSERT INTO register 
-        (fullname, email, phone, school, referral, comments) VALUES 
-        (:fullname, :email, :phone, :school, :referral, :comments)';
+        (fullname, email, phone, school, referral, speciality, comments) VALUES 
+        (:fullname, :email, :phone, :school, :referral, :speciality, :comments)';
 
         $query = $db->prepare($sql);
         $result = $query->execute($data);

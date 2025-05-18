@@ -16,7 +16,8 @@ class User implements EntityHelpers
         public ?string $verificationToken,
         public \DateTime $createdAt,
         public \DateTime $updatedAt,
-    ) {}
+    ) {
+    }
 
     public function validate(array $data): bool
     {

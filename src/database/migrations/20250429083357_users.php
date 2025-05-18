@@ -20,13 +20,16 @@ final class Users extends AbstractMigration
     public function change(): void
     {
         $table = $this->table('users');
-        $table->addColumn('user_id', 'string')
-            ->addColumn('name', 'string', ['limit' => 70])
+        $table->addColumn('name', 'string', ['limit' => 70])
             ->addColumn('email', 'string')
             ->addColumn('password', 'string')
             ->addColumn('role', 'string')
-            ->addColumn('created_on', 'datetime')
-            ->addColumn('updated_on', 'datetime')
+            ->addColumn('created_on', 'datetime', [
+                'default' => 'CURRENT_TIMESTAMP',
+            ])
+            ->addColumn('updated_on', 'datetime', [
+                'default' => 'CURRENT_TIMESTAMP',
+            ])
             ->create();
     }
 }

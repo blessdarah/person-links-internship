@@ -10,11 +10,17 @@ class Connection
     /** @var PDO|null */
     private static $instance = null;
 
-    public function __construct() {}
+    public function __construct()
+    {
+    }
 
-    public function __wakeup() {}
+    public function __wakeup()
+    {
+    }
 
-    public function __clone() {}
+    public function __clone()
+    {
+    }
 
     public static function getInstance(): PDO
     {
