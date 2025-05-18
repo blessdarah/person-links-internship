@@ -1,0 +1,21 @@
+parameters:
+    level: max
+    paths:
+        - src/views/pages/admin/Dashboard.php
+    checkMissingIterableValueType: true
+    checkMissingVarTagType: true
+    checkUninitializedProperties: true
+    checkUnionTypes: true
+    checkExplicitMixed: true
+    inferPrivatePropertyTypeFromConstructor: true
+    reportUnmatchedIgnoredErrors: true
+
+services:
+    -
+        class: App\Rules\DisallowCurlyBraceSyntaxRule
+        tags: [phpstan.rules.rule]
+
+rules:
+    - PHPStan\Rules\Classes\UnusedConstructorParametersRule
+    - PHPStan\Rules\Functions\UnusedClosureUsesRule
+    - PHPStan\Rules\Variables\UnusedVariableRule

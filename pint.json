@@ -1,0 +1,9 @@
+{
+    "preset": "psr12",
+    "rules": {
+        "control_structure_braces": false,
+        "array_syntax": {
+            "syntax": "short"
+        }
+    }
+}
