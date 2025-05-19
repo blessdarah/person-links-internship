@@ -1,7 +1,9 @@
 <?php
+
 declare(strict_types=1);
 
-session_start();
+@session_start();
+
 $errors = $_SESSION['errors'] ?? [];
 $formData = $_SESSION['formData'] ?? [];
 function hasError(string $key)
@@ -10,9 +12,13 @@ function hasError(string $key)
 }
 ?>
 
+
 <main>
-    <h1 class="text-3xl font-bold underline">Apply</h1>
-    <form action="apply" method="POST" class="mt-4 space-y-6 bg-white p-6 rounded-lg shadow-md max-w-md mx-auto">
+    <header class="p-6 max-w-xl mx-auto mt-8 lg:mt-16">
+        <h1 class="text-3xl text-center font-bold">Start application</h1>
+        <p class="text-gray-500 text-center">Fill the application form below.</p>
+    </header>
+    <form action="/apply" method="POST" class="mt-4 grid md:grid-cols-2 gap-4 space-y-6 bg-white p-6 rounded-lg shadow-md max-w-xl mx-auto">
         <div class="flex flex-col">
             <label for="fullname" class="text-sm font-medium text-gray-700 mb-1">Full Name:</label>
             <input type="text"
@@ -95,7 +101,7 @@ function hasError(string $key)
                 <p class="text-sm text-red-600 mt-2"><?= $errors['referral'] ?></p>
             <?php endif; ?>
         </div>
-        <div class="flex flex-col">
+        <div class="flex flex-col md:col-span-2">
             <label for="comments" class="text-sm font-medium text-gray-700 mb-1">Comments:</label>
             <textarea
                 id="comments"

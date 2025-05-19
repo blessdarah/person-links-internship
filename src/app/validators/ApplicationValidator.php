@@ -14,11 +14,11 @@ class ApplicationValidator extends BaseValidator
         return [
             'fullname' => 'required',
             'email' => 'required|email',
-            'phone' => 'required|size:9',
-            'school' => 'required',
-            'referral' => 'required',
-            'speciality' => 'required',
-            'comments' => 'required',
+            'phone' => 'required|numeric|size:9',
+            'school' => 'required|string',
+            'referral' => 'required|string',
+            'speciality' => 'required|string',
+            'comments' => 'string',
         ];
     }
 }

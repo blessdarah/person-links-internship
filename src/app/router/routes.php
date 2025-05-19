@@ -11,8 +11,8 @@ use PersonLinks\Internship\controllers\PaymentController;
 Router::get('/', [PageController::class, 'apply']);
 Router::post('/apply', [PageController::class, 'applyHandler']);
 Router::get('/dashboard', [AdminPageController::class, 'index']);
-Router::get('/pay-now', [PaymentController::class, 'index']);
-Router::post('/pay-now', [PaymentController::class, 'create']);
+Router::get('/pay-now', [PaymentController::class, 'index'])->name("paynow.index");
+Router::post('/pay-now', [PaymentController::class, 'create'])->name("paynow.create");
 
 // Auth routes
 Router::get('/login', [AuthController::class, 'login']);
